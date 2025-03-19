@@ -23,11 +23,12 @@ namespace inv.reg.ped.online.models
                 var connectionString = configuration.GetConnectionString("DefaultConnection");
                 optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             }
+
         }
 
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Pedidos> Pedidos { get; set; }
-        public DbSet<UnidadesVendidas> UnidadesVendedidas { get; set; }
+        public DbSet<UnidadesVendidas> UnidadesVendidas { get; set; }
         public DbSet<Ventas> Ventas { get; set; }
 
     }

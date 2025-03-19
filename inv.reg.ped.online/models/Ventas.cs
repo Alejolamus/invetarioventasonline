@@ -19,6 +19,8 @@ namespace inv.reg.ped.online.models
         public int Recaudo { get; set; }
 
         public int CodTransaccion { get; set; }
+
+        public DateTime Fechadeventa { get; set; } = DateTime.Now;
         public List<UnidadesVendidas> UnidadesVendidas { get; set; } = new List<UnidadesVendidas>();
         public List<Pedidos> Pedidos { get; set; } = new List<Pedidos>();
     }
