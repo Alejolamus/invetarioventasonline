@@ -22,7 +22,7 @@ namespace inv.reg.ped.online.models
         public int SaldoFaltante { get; set; }
         [Required]
         public string Tel { get; set; }
-        public string Corrreo { get; set; }
+        public string Correo { get; set; }
         public DateTime FechaEntrega { get; set; }
     }
 }

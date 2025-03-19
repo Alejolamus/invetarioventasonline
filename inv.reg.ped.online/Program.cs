@@ -6,7 +6,8 @@ namespace inv.reg.ped.online
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("selecciones la accion que desea");
+
         }
     }
 }

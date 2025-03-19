@@ -20,6 +20,8 @@ namespace inv.reg.ped.online.models
 
         [Column("Cantidad Min")]
         public int CantidadMin { get; set; }
+
+        public int Precio { get; set; }
         public List<UnidadesVendidas> UnidadesVendidas { get; set; } = new List<UnidadesVendidas>();
     }
 }
