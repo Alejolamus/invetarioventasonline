@@ -94,6 +94,7 @@ namespace inv.reg.ped.online
                         {
                             unidadEliminar.CantidadVendida = nuevaCantidad;
                             context.SaveChanges();
+                            Console.WriteLine($"Se modifico el numero de unidades vendidas de '{unidadx}: unidades vendidas '{nuevaCantidad}'");
                         }
                     else
                     {
