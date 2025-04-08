@@ -19,6 +19,7 @@ namespace inv.reg.ped.online.models
         public int IdProducto { get; set; }
         [ForeignKey("IdProducto")]
         public Productos Producto { get; set; }
+        public string nProducto { get; set; }
         public int CantidadVendida { get; set; }
 
     }

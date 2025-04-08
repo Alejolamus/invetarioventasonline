@@ -40,7 +40,7 @@ namespace inv.reg.ped.online
                 // Consulta de productos en una venta e imprime
                 var unidadesvendidas = context.UnidadesVendidas
                     .Where(uv => uv.IdVenta == IdvenMod)
-                    .Select(uv => new {uv.Id, uv.nproducto, uv.CantidadVendida })
+                    .Select(uv => new {uv.Id, uv.nProducto, uv.CantidadVendida })
                     .ToList();
                 if (unidadesvendidas.Any())
                 {
@@ -52,7 +52,7 @@ namespace inv.reg.ped.online
                 foreach (var producinvent in unidadesvendidas)
                 // Solicita numero de productos a cambiar ( nombre y cantidad a restar)
                 {
-                    Console.WriteLine($"producto {producinvent.nproducto}, con un total de {producinvent.CantidadVendida}");
+                    Console.WriteLine($"producto {producinvent.nProducto}, con un total de {producinvent.CantidadVendida}");
                 }
                 Console.WriteLine("numero de productos a modificar");
                 int numamod = int.Parse(Console.ReadLine());
@@ -68,19 +68,19 @@ namespace inv.reg.ped.online
                     //ciclo foreach para idenficar si el prodecto esta registrado en la venta
                     foreach (var unidad in unidadesvendidas)
                     {
-                        if (unidad.nproducto == promod)
+                        if (unidad.nProducto == promod)// tipos de variable incompatible
                         {
                             producvent = true;
                             Console.WriteLine("Unidades vendidas a restar");
                             int numaresn = int.Parse(Console.ReadLine());
                             nuevaCantidad = unidad.CantidadVendida - numaresn;
                             numares = numares + numaresn;
-                            unidadx = unidad.nproducto;
+                            unidadx = unidad.nProducto;//re eval(no necesario"")
                             break;
                         }
                     }
                     var unidadEliminar = context.UnidadesVendidas
-                        .FirstOrDefault(uv => uv.nproducto == unidadx);
+                        .FirstOrDefault(uv => uv.nProducto == unidadx);
                     // condicional index elimina registro por id en caso de que sea 0 el numero final de unidades vendidas
                     // en caso contrario modifica unicamente el valor de unidades vendidas
                     if (producvent)

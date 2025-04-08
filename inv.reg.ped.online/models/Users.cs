@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace inv.reg.ped.online.models
 {
@@ -12,13 +14,9 @@ namespace inv.reg.ped.online.models
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
+        public int Cargo { get; set; }
+        public Boolean EstadoVacacional { get; set; }
+        public List<IdentificadoresDeUsers> IdentificadoresDeUsers { get; set; } = new List<IdentificadoresDeUsers>();
 
-        [Column("Tipo de cuenta")]
-        public int TipoDeCuenta { get; set; }
-        [ForeignKey("TiDeCuenta")]
-        public Productos Producto { get; set; }
-        //Valor asignado por otro otro Proyecto de contraseña y validacion entre bases de dada
-        [Column("Valdidacion Pass")]
-        public Boolean ValidacionPass { get; set; }
     }
 }

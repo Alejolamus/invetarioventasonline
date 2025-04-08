@@ -81,6 +81,7 @@ namespace inv.reg.ped.online
                         {
                             IdVenta = iddeventa,
                             IdProducto = idproductov,
+                            nProducto = nombreProductob,
                             CantidadVendida = Cantidadporproducto
                         };
 

@@ -24,5 +24,7 @@ namespace inv.reg.ped.online.models
         public string Tel { get; set; }
         public string Correo { get; set; }
         public DateTime FechaEntrega { get; set; }
+
+        public bool Entregado { get; set; }
     }
 }

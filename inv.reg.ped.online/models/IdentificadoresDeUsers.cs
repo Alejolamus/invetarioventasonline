@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace inv.reg.ped.online.models
 {
@@ -11,9 +13,13 @@ namespace inv.reg.ped.online.models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string TipoDeCuenta { get; set; }
+        public string idUser { get; set; }
+        [ForeignKey("idUser")]
+        public int TipoDePermiso { get; set; }
 
-        public int TiposDePermisos { get; set; }
-        public int x { get; set; }
-    }
+
+        
+
+
+     }
 }

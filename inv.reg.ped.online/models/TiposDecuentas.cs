@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace inv.reg.ped.online.models
 {
-    class AutorizacioDePermios
+    class TiposDecuentas
     {
     }
 }
