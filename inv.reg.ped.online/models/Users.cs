@@ -14,6 +14,8 @@ namespace inv.reg.ped.online.models
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
+        public string TipoDeDoc { get; set; }
+        public int NumeroDeDocumento { get; set; }
         public string Cargo { get; set; }
         [Required]
         public string Contraseña { get; set; }

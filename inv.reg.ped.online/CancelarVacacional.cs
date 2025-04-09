@@ -7,7 +7,7 @@ using inv.reg.ped.online.models;
 namespace inv.reg.ped.online
 
 {
-    public class AddVacaciones
+    public class CancelarVacaciones
     {
         public static void Ejecutar()
         {
@@ -17,7 +17,6 @@ namespace inv.reg.ped.online
             string TD = Console.ReadLine();
             Console.WriteLine("Numero de documento");
             int DocEmp = int.Parse(Console.ReadLine());
-
             using (var context = new AppDbContext())
             {
                 var usermod = context.Users
@@ -29,7 +28,7 @@ namespace inv.reg.ped.online
                 }
                 else
                 {
-                    usermod.EstadoVacacional = true;
+                    usermod.EstadoVacacional = false;
                     context.SaveChanges();
                 }
             }

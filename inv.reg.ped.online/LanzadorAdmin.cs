@@ -13,6 +13,7 @@ namespace inv.reg.ped.online
             Console.WriteLine("1. Agregar: (Empleado, Producto, Vaciones, Venta y Entrega)");
             Console.WriteLine("2. Eliminar: (Empleado, Producto, Vaciones, Venta y Producto en Venta)");
             Console.WriteLine("3. Consultas: (Empleados, Pedidos, Pedido individual, Productos y Ventas)");
+            Console.WriteLine("4. Modificar cargo de empleado");
 
             string opcion = Console.ReadLine();
 
@@ -57,7 +58,7 @@ namespace inv.reg.ped.online
                 int optiontwo = int.Parse(Console.ReadLine());
                 if (optiontwo==1)
                 {
-                    //agregar clase de eliminado de empleado
+                    EliminarEmpleado.Ejecutar();
                 }
                 else if ( optiontwo == 2)
                 {
@@ -65,7 +66,7 @@ namespace inv.reg.ped.online
                 }
                 else if (optiontwo == 3)
                 {
-                    //agregar clase de retirode vacaciones
+                    CancelarVacaciones.Ejecutar();
                 }
                 else if ( optiontwo == 4 )
                 {
@@ -105,6 +106,10 @@ namespace inv.reg.ped.online
                 {
                     ConsultaVentas.Ejecutar();
                 }
+            }
+            else if (opcion == "4")
+            {
+                ModCargo.Ejecutar();
             }
         }
     }
