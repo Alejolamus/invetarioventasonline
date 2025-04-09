@@ -14,9 +14,10 @@ namespace inv.reg.ped.online.models
         public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
-        public int Cargo { get; set; }
+        public string Cargo { get; set; }
+        [Required]
+        public string Contraseña { get; set; }
         public Boolean EstadoVacacional { get; set; }
-        public List<IdentificadoresDeUsers> IdentificadoresDeUsers { get; set; } = new List<IdentificadoresDeUsers>();
 
     }
 }

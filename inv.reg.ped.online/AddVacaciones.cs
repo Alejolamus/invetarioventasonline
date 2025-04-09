@@ -7,7 +7,7 @@ using inv.reg.ped.online.models;
 namespace inv.reg.ped.online
 
 {
-    public class ModCargo
+    public class AddVacaciones
     {
         public static void Ejecutar()
         {
@@ -25,9 +25,7 @@ namespace inv.reg.ped.online
                 }
                 else
                 {
-                    Console.WriteLine("Nuevo Cargo");
-                    string NuevoCargos = Console.ReadLine();
-                    usermod.Cargo = NuevoCargos;
+                    usermod.EstadoVacacional = true;
                     context.SaveChanges();
                 }
             }
