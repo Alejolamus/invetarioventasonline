@@ -1,38 +1,64 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using inv.reg.ped.online.models;
 namespace inv.reg.ped.online
 {
     class Program
     {
         static void Main()
         {
-            Console.WriteLine("Seleccione una opción:");
-            Console.WriteLine("1. Agregar Producto");
-            Console.WriteLine("2. Agregar venta y pedido");
-            Console.WriteLine("3. Eliminar Producto");
-            Console.WriteLine("4. Eliminar venta total (incluye borrado de pedido)");
-            Console.WriteLine("5. Eliminar unidades en una venta");
+            Console.WriteLine("Nombre de usuario");
+            string nombreuser = Console.ReadLine();
+            Console.WriteLine("Contraseña");
+            string password = Console.ReadLine();
+            string v1 = "Admin";
+            string v2 = "Coordinador";
+            string v3 = "Vendedor";
+            string v4 = "Repartidor";
 
-            string opcion = Console.ReadLine();
-
-            if (opcion == "1")
+            using (var context = new AppDbContext())
             {
-                AddProducto.Ejecutar(); 
-            }
-            else if (opcion == "2")
-            {
-                AddVenta.Ejecutar(); 
-            }
-            else if (opcion == "3")
+                var identificador = context.Users
+                    .Where(h => h.Nombre == nombreuser && h.Contraseña == password)
+                    .FirstOrDefault();
+                if (identificador != null)
                 {
-                EliminarProducto.Ejecutar();
+                    if (identificador.Cargo == v1)
+                    {
+                        LanzadorAdmin.Ejecutar();
+                    }
+                    else
+                    {
+                        if (identificador.Cargo == v2)
+                        {
+                            LanzadorCoordinador.Ejecutar();
+                        }
+                        else
+                        {
+                            if (identificador.Cargo == v3)
+                            {
+                                LanzadorVendedor.Ejecutar();
+                            }
+                            else
+                            {
+                                if (identificador.Cargo == v4)
+                                {
+                                    LanzadorRepartidor.Ejecutar();
+                                }
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Usuario o contraseña incorrecto");
+                }
             }
-            else if (opcion == "4")
-            {
-                EliminarVentaTotal.Ejecutar();
-            }
-           
-            
+
         }
     }
 }
