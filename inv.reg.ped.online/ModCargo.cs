@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace inv.reg.ped.online.models
+namespace inv.reg.ped.online
 {
-    class TiposDecuentas
+    class ModCargo
     {
     }
 }

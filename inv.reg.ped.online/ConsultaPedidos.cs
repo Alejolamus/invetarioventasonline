@@ -14,15 +14,14 @@ namespace inv.reg.ped.online
             using (var context = new AppDbContext())
             {
                 var idsventas = context.Ventas
-                    .Select(uv => { uv.Id })
                     .ToList();
                 foreach ( var iddeventa in idsventas)
                 {//revisar la coomparacion entre idventa y iddeventa
                     var domicilios = context.Pedidos
-                        .Where(v => v.IdVenta == iddeventa & v.Entregado == Conparaentrega )
+                        .Where(v => v.IdVenta == iddeventa.Id & v.Entregado == Conparaentrega )
                         .ToList();
                     
-                    if (domicilios.count == 0)
+                    if (domicilios.Count == 0)
                        {
                         Console.WriteLine("No se encontraron pedidos por entregar");
                     }

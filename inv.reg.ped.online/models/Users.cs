@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace inv.reg.ped.online.models
 {
-    class Users
+    public class Users
     {
         [Key]
         public int Id { get; set; }

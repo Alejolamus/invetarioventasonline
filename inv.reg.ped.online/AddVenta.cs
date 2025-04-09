@@ -136,7 +136,8 @@ namespace inv.reg.ped.online
                     Cliente = nombrecliente,
                     SaldoFaltante = saldofal,
                     Correo = correo,
-                    FechaEntrega = fechadeentrega
+                    FechaEntrega = fechadeentrega,
+                    Entregado = false
                 };
 
                 context.Pedidos.Add(pedido);

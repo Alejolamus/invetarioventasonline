@@ -40,11 +40,27 @@ namespace inv.reg.ped.online
                 var Pedidoconsul = context.Pedidos
                     .Where(h => h.IdVenta == IdvenConsul)
                     .FirstOrDefault();
-
+                var CantidadesProd = context.UnidadesVendidas
+                    .Where(r => r.IdVenta == IdvenConsul)
+                    .Select(r => new { r.nProducto, r.CantidadVendida })
+                    .ToList();
                 if (Pedidoconsul.Entregado == true)
                 {
                     Console.WriteLine($"El pedido ha sido entregado el dia {Pedidoconsul.FechaEntrega} con los siguientes productos:");
-                    
+                    foreach (var ProdCant in CantidadesProd)
+                    {
+                        Console.WriteLine($" Producto: {ProdCant.nProducto} y {ProdCant.CantidadVendida}");
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"El pedido programado para el dia {Pedidoconsul.FechaEntrega} con los siguientes productos:");
+                    foreach (var ProdCant in CantidadesProd)
+                    {
+                        Console.WriteLine($" Producto: {ProdCant.nProducto} y {ProdCant.CantidadVendida}");
+
+                    }
                 }
             }
         }

@@ -29,7 +29,10 @@ namespace inv.reg.ped.online.models
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Pedidos> Pedidos { get; set; }
         public DbSet<UnidadesVendidas> UnidadesVendidas { get; set; }
+        public DbSet<IdentificadoresDeUsers> IdentificadoresDeUsers { get; set; }
         public DbSet<Ventas> Ventas { get; set; }
+        public DbSet<PermisosUsers> PermisosUsers { get; set; }
+        public DbSet<Users> Users { get; set; }
 
     }
 }

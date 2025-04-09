@@ -20,11 +20,11 @@ namespace inv.reg.ped.online
                 }
                 foreach ( var user in users )
                 {
-                    if (user.EstadoVacacional == 0)
+                    if (user.EstadoVacacional == false)
                     {
-                        Console.WriteLine($"Empleado:{user.nombre} con cargo: {user.Cargo} no se encuentra en vaciones");    
+                        Console.WriteLine($"Empleado:{user.Nombre} con cargo: {user.Cargo} no se encuentra en vaciones");    
                     }
-                    Console.WriteLine($"Empleado:{user.nombre} con cargo: {user.Cargo} se encuentra en vaciones");
+                    Console.WriteLine($"Empleado:{user.Nombre} con cargo: {user.Cargo} se encuentra en vaciones");
                 }
                 
             }
